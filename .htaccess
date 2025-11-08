@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Capturar Authorization header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    
+    # Redirige todas las solicitudes a public/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/index.php [L]
+    
+    # Forzar la interpretación PHP
+    AddHandler application/x-httpd-php .php
+    <FilesMatch "\.php$">
+        SetHandler application/x-httpd-php
+    </FilesMatch>
+</IfModule>

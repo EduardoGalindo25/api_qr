@@ -1,0 +1,25 @@
+{
+    "name": "volkalabs/plantilla_php",
+    "license": "proprietary",
+    "description": "Plantilla para realizar proyectos en php",
+    "autoload": {
+        "psr-4": {
+            "Config\\": "config/",
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "volkalabs",
+            "email": "volkalabs@gmail.com"
+        }
+    ],
+     "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "gabogalro/sql-helpers": "^1.0",
+        "gabogalro/response-helpers": "^1.0",
+        "gabogalro/request-helpers": "^1.0",
+        "gabogalro/php-api-router": "^1.0",
+        "gabogalro/auth-library": "^2.0"
+    }
+}
